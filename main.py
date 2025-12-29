@@ -20,7 +20,7 @@ def encrypt_info():
     cipher = AES.new(key, AES.MODE_ECB)
     encrypted = cipher.encrypt(pad(info).encode())
     encoded = base64.b64encode(encrypted).decode()
-    result_label.config(text=f"🔒 Encrypted:\n{encoded}")
+    result_label.config(text=f"Encrypted:\n{encoded}")
     with open("secret.txt", "w") as f:
         f.write(encoded)
     with open("key.txt", "wb") as f:
@@ -35,7 +35,7 @@ def decrypt_info():
         cipher = AES.new(saved_key, AES.MODE_ECB)
         encrypted = base64.b64decode(encoded)
         decrypted = cipher.decrypt(encrypted).decode().strip()
-        result_label.config(text=f"🔓 Decrypted:\n{decrypted}")
+        result_label.config(text=f"Decrypted:\n{decrypted}")
     except Exception as e:
         messagebox.showerror("Error", f"Decryption failed: {e}")
 
