@@ -23,3 +23,5 @@ A modern Python app that encrypts and decrypts personal information using AES wi
 ### Installation
 ```bash
 pip install pycryptodome
+python main.py
+```
